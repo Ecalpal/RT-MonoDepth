@@ -60,6 +60,27 @@ python test_simple_full.py --image_path ./fortest/data --weight_path ./weights/R
 python test_simple_s.py --image_path ./fortest/data --weight_path ./weights/RTMonoDepth/s/ms_640_192/ --pred_metric_depth
 ```
 
+## 📊 Test the runtime on the Desktop GPU
+We provide an example of comparing our small model with Fastdepth, where you can change the RTMonoDepth_s to RTMonoDesth in [here](https://github.com/Ecalpal/RT-MonoDepth/blob/b32d6e6469422dd10f8a3214874b91023a05b7cc/compare_runtime.py#L9) to test our full model.
+```shell
+python compare_runtime.py
+```
+
+
+## 📊 Test the runtime on Embedded Systems
+We performed our evaluation on the NVIDIA Jetson Nano and the NVIDIA Xavier NX and NVIDIA AGX Orin, using the following dependencies:
+
+Installing PyTorch and torchvision, refer to this post: https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-11-now-available/72048
+
+Installing torch2trt: https://github.com/NVIDIA-AI-IOT/torch2trt
+
+You might need to increase SWAP memory for the tensorRT conversion to 4GB: https://github.com/JetsonHacksNano/resizeSwapMemory
+
+```shell
+python embedded_platform_runtime_test.py
+```
+You can also change the RTMonoDepth to RTMonoDesth_s in [here](https://github.com/Ecalpal/RT-MonoDepth/blob/b32d6e6469422dd10f8a3214874b91023a05b7cc/embedded_platform_runtime_test.py#L8) to test our full model.
+
 
 ## 💾 KITTI training data
 
@@ -170,7 +191,7 @@ Instead, a set of `.png` images will be saved to disk ready for upload to the ev
 
 
 
-**📷📷 Note on stereo evaluation**
+**📷 Note on stereo evaluation**
 
 Our stereo models are trained with an effective baseline of `0.1` units, while the actual KITTI stereo rig has a baseline of `0.54m`. This means a scaling of `5.4` must be applied for evaluation.
 In addition, for models trained with stereo supervision we disable median scaling.
