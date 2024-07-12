@@ -6,6 +6,14 @@ This is the reference PyTorch implementation for training and testing depth esti
 >
 > [ICIP 2024 (arXiv pdf)](https://arxiv.org/abs/2308.10569)
 
+<div align=center>
+<img src="compare.png" width="50%">
+</div>
+
+
+
+
+
 This code is for non-commercial use;
 
 If you find our work useful in your research please consider citing our paper:
@@ -79,7 +87,7 @@ You might need to increase SWAP memory for the tensorRT conversion to 4GB: https
 ```shell
 python embedded_platform_runtime_test.py
 ```
-You can also change the RTMonoDepth to RTMonoDesth_s in [here](https://github.com/Ecalpal/RT-MonoDepth/blob/b32d6e6469422dd10f8a3214874b91023a05b7cc/embedded_platform_runtime_test.py#L8) to test our full model.
+You can also change the RTMonoDepth to RTMonoDesth_s in [here](https://github.com/Ecalpal/RT-MonoDepth/blob/b32d6e6469422dd10f8a3214874b91023a05b7cc/embedded_platform_runtime_test.py#L8) to test our small model.
 
 
 ## 💾 KITTI training data
