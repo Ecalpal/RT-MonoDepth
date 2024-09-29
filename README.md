@@ -4,7 +4,9 @@ This is the reference PyTorch implementation for training and testing depth esti
 
 > **Real-time Monocular Depth Estimation on Embedded Systems**
 >
-> [ICIP 2024 (arXiv pdf)](https://arxiv.org/abs/2308.10569)
+> [ICIP 2024 (IEEE)](https://ieeexplore.ieee.org/document/10648152)
+> 
+> [ICIP 2024 (arXiv)](https://arxiv.org/abs/2308.10569)
 
 <div align=center>
 <img src="compare.png" width="50%">
@@ -19,21 +21,22 @@ This code is for non-commercial use;
 If you find our work useful in your research please consider citing our paper:
 
 ```
-@article{rtmonodepth,
+@INPROCEEDINGS{rtmonodepth,
   author       = {Cheng Feng and
                   Zhen Chen and
                   Congxuan Zhang and
                   Weiming Hu and
                   Bing Li and
                   Liyue Ge},
-  title        = {Real-time Monocular Depth Estimation on Embedded Systems},
+  title        = {Real-Time Monocular Depth Estimation on Embedded Systems},
   booktitle    = {{IEEE} International Conference on Image Processing, {ICIP} 2024,
                   Abu Dhabi, United Arab Emirates, October 27-30, 2024},
   publisher    = {{IEEE}},
   year         = {2024},
+  pages        = {3464-3470},
+  doi          = {10.1109/ICIP51287.2024.10648152}}
 }
 ```
-
 
 
 ## ⚙️ Setup
