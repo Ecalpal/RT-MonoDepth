@@ -159,12 +159,11 @@ class MonodepthOptions:
         self.parser.add_argument("--no_cuda",
                                 help="if set disables CUDA",
                                 action="store_true")
-        num_workers = 0
-        print(f"num_workers: {num_workers}")
+        
         self.parser.add_argument("--num_workers",
                                 type=int,
                                 help="number of dataloader workers",
-                                default=num_workers)
+                                default=8)
 
         # LOADING options
         self.parser.add_argument("--load_weights_folder", 
