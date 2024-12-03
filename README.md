@@ -129,19 +129,19 @@ You can also train a model using the new [benchmark split](http://www.cvlibs.net
 
 **Monocular training:**
 ```shell
-python train.py --model_name mono_model
+python train.py --model_name mono_model --num_workers=8 --batch_size=8 --scales 0 1 2  --num_epochs 31
 ```
 
 **Stereo training:**
 
 Our code defaults to using Zhou's subsampled Eigen training data. For stereo-only training we have to specify that we want to use the full Eigen training set – see paper for details.
 ```shell
-python train.py --model_name RTMonoDepth_s --data_path Your_path_to_kitti_raw --num_workers=8 --batch_size=16 --scales 0 1 2 3 --num_epochs 31
+python train.py --model_name RTMonoDepth_s --data_path Your_path_to_kitti_raw --num_workers=8 --batch_size=8 --scales 0 1 2 --num_epochs 31
 ```
 
 **Monocular + stereo training:**
 ```shell
-python train.py --model_name RTMonoDepth_ms --data_path Your_path_to_kitti_raw --num_workers=8 --batch_size=16 --scales 0 1 2 3 --num_epochs 31 --use_stereo
+python train.py --model_name RTMonoDepth_ms --data_path Your_path_to_kitti_raw --num_workers=8 --batch_size=8 --scales 0 1 2 --num_epochs 31 --use_stereo
 ```
 
 
