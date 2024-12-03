@@ -227,7 +227,7 @@ class Trainer:
             # log less frequently after the first 2000 steps to save time & disk space
             early_phase = batch_idx % self.opt.log_frequency == 0 and self.step < 2000
             late_phase = self.step % 2000 == 0
-
+            
             if early_phase or late_phase:
                 self.log_time(batch_idx, duration, losses["loss"].cpu().data)
 
@@ -336,7 +336,7 @@ class Trainer:
         """
         self.set_eval()
         try:
-            inputs = self.val_iter.next()
+            inputs = next(self.val_iter)
         except StopIteration:
             self.val_iter = iter(self.val_loader)
             inputs = self.val_iter.next()
@@ -676,13 +676,13 @@ class Trainer:
                     for f_idx, frame_id in enumerate(self.opt.frame_ids[1:]):
                         writer.add_image(
                             "predictive_mask_{}_{}/{}".format(frame_id, s, j),
-                            outputs["predictive_mask"][("disp", s)][j, f_idx][None, ...],
+                            outputs["predictive_mask"][("disp", s)][j, f_idx],
                             self.step)
 
                 elif not self.opt.disable_automasking:
                     writer.add_image(
                         "automask_{}/{}".format(s, j),
-                        outputs["identity_selection/{}".format(s)][j][None, ...], self.step)
+                        outputs["identity_selection/{}".format(s)][j], self.step)
 
                 # depth hint logging
                 if self.opt.use_depth_hints:
