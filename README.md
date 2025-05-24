@@ -178,12 +178,12 @@ python export_gt_depth.py --data_path Your_path_to_kitti_raw --split eigen_bench
 
 The following example command evaluates the pretrained models:
 ```shell
-python evaluate_depth_full.py --data_path Your_path_to_kitti_raw --load_weights_folder ./weights/RTMonoDepth/s/m_640_192/ --eval_mono
+python evaluate_depth_full.py --data_path Your_path_to_kitti_raw --load_weights_folder ./weights/RTMonoDepth/full/m_640_192/ --eval_mono
 python evaluate_depth_s.py --data_path Your_path_to_kitti_raw --load_weights_folder ./weights/RTMonoDepth/s/m_640_192/ --eval_mono
 ```
 For stereo models, you must use the `--eval_stereo` flag (see note below):
 ```shell
-python evaluate_depth_full.py --data_path Your_path_to_kitti_raw --load_weights_folder ./weights/RTMonoDepth/ms/m_640_192/ --eval_stereo
+python evaluate_depth_full.py --data_path Your_path_to_kitti_raw --load_weights_folder ./weights/RTMonoDepth/full/ms_640_192/ --eval_stereo
 python evaluate_depth_s.py --data_path Your_path_to_kitti_raw --load_weights_folder ./weights/RTMonoDepth/s/ms_640_192/ --eval_stereo
 ```
 If you train your own model with our code you are likely to see slight differences to the publication results due to randomization in the weights initialization and data loading.
